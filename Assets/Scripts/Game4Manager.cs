@@ -6,81 +6,59 @@ using UnityEngine.UI;
 
 public class Game4Manager : MonoBehaviour
 {
-    public GameObject[] beadPrefabs; 
-    public Transform modelPanel, playerPanel;
-    public Button checkButton;
-    public int beadCount = 10;
+    public GameObject modelPanel;
+    public GameObject gameplayPanel;
+    public List<GameObject> modelBeads; 
+    public int hiddenBeadCount = 6; 
 
-    private List<Color> modelColors = new List<Color>();
-    private List<Bead> playerBeads = new List<Bead>();
+    private HashSet<int> hiddenIndexes = new HashSet<int>(); 
 
     void Start()
     {
-        checkButton.gameObject.SetActive(false);
         StartCoroutine(ShowModelThenPlay());
     }
 
     IEnumerator ShowModelThenPlay()
     {
-        for (int i = 0; i < beadCount; i++)
-        {
-            
-            int prefabIndex = (i % beadPrefabs.Length);
-            GameObject bead = Instantiate(beadPrefabs[prefabIndex], modelPanel);
-            Bead beadScript = bead.GetComponent<Bead>();
+        modelPanel.SetActive(true);            
+        gameplayPanel.SetActive(false);        
 
-            Color color = (i % 2 == 0) ? Color.red : Color.blue;
-            beadScript.SetColor(color);
-            modelColors.Add(color);
+        
+        hiddenIndexes.Clear();
+
+        
+        while (hiddenIndexes.Count < hiddenBeadCount)
+        {
+            int rand = Random.Range(0, modelBeads.Count);
+            hiddenIndexes.Add(rand);
         }
 
-        yield return new WaitForSeconds(3f);
-        modelPanel.gameObject.SetActive(false);
-        GeneratePlayerBeads();
-        checkButton.gameObject.SetActive(true);
-    }
-
-    void GeneratePlayerBeads()
-    {
-        for (int i = 0; i < beadCount; i++)
+        
+        foreach (int index in hiddenIndexes)
         {
-            
-            int prefabIndex = Random.Range(0, beadPrefabs.Length);
-            GameObject bead = Instantiate(beadPrefabs[prefabIndex], playerPanel);
-            Bead beadScript = bead.GetComponent<Bead>();
-
-            
-            Color color = (Random.value > 0.5f) ? Color.red : Color.blue;
-            beadScript.SetColor(color);
-            playerBeads.Add(beadScript);
+            modelBeads[index].SetActive(false);
         }
+
+        yield return new WaitForSeconds(3f); 
+
+        modelPanel.SetActive(false);         
+        gameplayPanel.SetActive(true);       
     }
 
-    public void CheckAnswer()
+    
+    public bool IsCorrect(List<bool> playerRemoved)
     {
-        bool correct = true;
-
-        for (int i = 0; i < beadCount; i++)
+        for (int i = 0; i < modelBeads.Count; i++)
         {
-            Color modelColor = modelColors[i];
-            Color playerColor = playerBeads[i].GetComponent<Image>().color;
-            bool isSame = playerColor == modelColor;
-            bool isDimmed = playerBeads[i].IsDimmed();
+            bool shouldRemove = hiddenIndexes.Contains(i); 
+            bool playerDidRemove = playerRemoved[i];       
 
-            
-            if ((!isSame && !isDimmed) || (isSame && isDimmed))
+            if (shouldRemove != playerDidRemove)
             {
-                correct = false;
+                return false; 
             }
         }
 
-        if (correct)
-        {
-            Debug.Log("Correct!");
-        }
-        else
-        {
-            Debug.Log("Incorrect!");
-        }
+        return true; 
     }
 }
