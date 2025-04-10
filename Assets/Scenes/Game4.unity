@@ -2355,7 +2355,7 @@ MonoBehaviour:
   - {fileID: 1206583586}
   - {fileID: 1736753541}
   - {fileID: 527515376}
-  hiddenBeadCount: 3
+  hiddenBeadCount: 6
 --- !u!4 &1191054858
 Transform:
   m_ObjectHideFlags: 0
