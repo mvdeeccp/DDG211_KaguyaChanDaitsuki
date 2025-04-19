@@ -6,32 +6,25 @@ using TMPro;
 
 public class PuzzleTile : MonoBehaviour
 {
-    [SerializeField] private Transform[] tiles; 
-    [SerializeField] private TextMeshProUGUI resultText;
-    [SerializeField] private Vector2 gridOrigin = Vector2.zero; 
-    [SerializeField] private float cellSize = 1f; 
-    [SerializeField] private int gridWidth = 4; 
-
-    public void CheckPuzzle()
+    public Vector3 targetPosition;
+    private Vector3 correctPosition;
+    private SpriteRenderer _sprite;
+    private void Awake()
     {
-        for (int i = 0; i < tiles.Length; i++)
+        targetPosition = transform.position;
+        correctPosition = transform.position;
+        _sprite = GetComponent<SpriteRenderer>();
+    }
+    private void Update()
+    {
+        transform.position = Vector3.Lerp(transform.position, targetPosition, 0.2f);
+        if(targetPosition == correctPosition)
         {
-            Vector2 localPos = tiles[i].position - (Vector3)gridOrigin;
-            int col = Mathf.RoundToInt(localPos.x / cellSize);
-            int row = Mathf.RoundToInt(-localPos.y / cellSize);
-
-            int currentIndex = row * gridWidth + col;
-            int expectedIndex = i;
-
-            if (currentIndex != expectedIndex)
-            {
-                resultText.text = "Wrong!";
-                resultText.color = Color.red;
-                return;
-            }
+            _sprite.color = Color.green;
         }
-
-        resultText.text = "Pass!";
-        resultText.color = Color.green;
+        else
+        {
+            _sprite.color = Color.red;
+        }
     }
 }

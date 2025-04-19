@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 17729877}
   - component: {fileID: 17729876}
   - component: {fileID: 17729878}
+  - component: {fileID: 17729879}
   m_Layer: 0
   m_Name: Tlie (10)
   m_TagString: Untagged
@@ -252,6 +253,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &17729879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 17729875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &43265498
 GameObject:
   m_ObjectHideFlags: 0
@@ -263,6 +277,7 @@ GameObject:
   - component: {fileID: 43265500}
   - component: {fileID: 43265499}
   - component: {fileID: 43265501}
+  - component: {fileID: 43265502}
   m_Layer: 0
   m_Name: Tlie (14)
   m_TagString: Untagged
@@ -382,6 +397,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &43265502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 43265498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &233970771
 GameObject:
   m_ObjectHideFlags: 0
@@ -393,6 +421,7 @@ GameObject:
   - component: {fileID: 233970773}
   - component: {fileID: 233970772}
   - component: {fileID: 233970774}
+  - component: {fileID: 233970775}
   m_Layer: 0
   m_Name: Tlie (7)
   m_TagString: Untagged
@@ -512,6 +541,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &233970775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 233970771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &279049113
 GameObject:
   m_ObjectHideFlags: 0
@@ -657,6 +699,7 @@ GameObject:
   - component: {fileID: 325771884}
   - component: {fileID: 325771883}
   - component: {fileID: 325771885}
+  - component: {fileID: 325771886}
   m_Layer: 0
   m_Name: Tlie (8)
   m_TagString: Untagged
@@ -776,6 +819,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &325771886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325771882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &431800847
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,70 +863,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &506555974
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 506555976}
-  - component: {fileID: 506555975}
-  m_Layer: 0
-  m_Name: GameObject
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &506555975
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506555974}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tiles:
-  - {fileID: 2011311969}
-  - {fileID: 1967988039}
-  - {fileID: 1573757133}
-  - {fileID: 1059684771}
-  - {fileID: 572789044}
-  - {fileID: 1721353787}
-  - {fileID: 2026068145}
-  - {fileID: 233970773}
-  - {fileID: 325771884}
-  - {fileID: 1789828429}
-  - {fileID: 17729877}
-  - {fileID: 576166464}
-  - {fileID: 1568970557}
-  - {fileID: 1286926312}
-  - {fileID: 43265500}
-  resultText: {fileID: 279049114}
-  gridOrigin: {x: 0, y: 0}
-  cellSize: 1
-  gridWidth: 4
---- !u!4 &506555976
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 506555974}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 753.40283, y: 155.24739, z: -3.4871151}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &572789042
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,6 +874,7 @@ GameObject:
   - component: {fileID: 572789044}
   - component: {fileID: 572789043}
   - component: {fileID: 572789045}
+  - component: {fileID: 572789046}
   m_Layer: 0
   m_Name: Tlie (4)
   m_TagString: Untagged
@@ -1001,6 +994,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &572789046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 572789042}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &576166462
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,6 +1018,7 @@ GameObject:
   - component: {fileID: 576166464}
   - component: {fileID: 576166463}
   - component: {fileID: 576166465}
+  - component: {fileID: 576166466}
   m_Layer: 0
   m_Name: Tlie (11)
   m_TagString: Untagged
@@ -1131,6 +1138,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &576166466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576166462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &675226571
 GameObject:
   m_ObjectHideFlags: 0
@@ -1317,7 +1337,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 506555975}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PuzzleTile, Assembly-CSharp
         m_MethodName: CheckPuzzle
         m_Mode: 1
@@ -1378,6 +1398,7 @@ GameObject:
   - component: {fileID: 1059684771}
   - component: {fileID: 1059684770}
   - component: {fileID: 1059684772}
+  - component: {fileID: 1059684773}
   m_Layer: 0
   m_Name: Tlie (3)
   m_TagString: Untagged
@@ -1497,6 +1518,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &1059684773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059684769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1286926310
 GameObject:
   m_ObjectHideFlags: 0
@@ -1508,6 +1542,7 @@ GameObject:
   - component: {fileID: 1286926312}
   - component: {fileID: 1286926311}
   - component: {fileID: 1286926313}
+  - component: {fileID: 1286926314}
   m_Layer: 0
   m_Name: Tlie (13)
   m_TagString: Untagged
@@ -1627,6 +1662,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &1286926314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286926310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1568970555
 GameObject:
   m_ObjectHideFlags: 0
@@ -1638,6 +1686,7 @@ GameObject:
   - component: {fileID: 1568970557}
   - component: {fileID: 1568970556}
   - component: {fileID: 1568970558}
+  - component: {fileID: 1568970559}
   m_Layer: 0
   m_Name: Tlie (12)
   m_TagString: Untagged
@@ -1757,6 +1806,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &1568970559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1568970555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1573757131
 GameObject:
   m_ObjectHideFlags: 0
@@ -1768,6 +1830,7 @@ GameObject:
   - component: {fileID: 1573757133}
   - component: {fileID: 1573757132}
   - component: {fileID: 1573757134}
+  - component: {fileID: 1573757135}
   m_Layer: 0
   m_Name: Tlie (2)
   m_TagString: Untagged
@@ -1887,6 +1950,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &1573757135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1573757131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1683495334
 GameObject:
   m_ObjectHideFlags: 0
@@ -2032,6 +2108,7 @@ GameObject:
   - component: {fileID: 1721353787}
   - component: {fileID: 1721353786}
   - component: {fileID: 1721353788}
+  - component: {fileID: 1721353789}
   m_Layer: 0
   m_Name: Tlie (5)
   m_TagString: Untagged
@@ -2151,6 +2228,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &1721353789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721353785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1789828427
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,6 +2252,7 @@ GameObject:
   - component: {fileID: 1789828429}
   - component: {fileID: 1789828428}
   - component: {fileID: 1789828430}
+  - component: {fileID: 1789828431}
   m_Layer: 0
   m_Name: Tlie (9)
   m_TagString: Untagged
@@ -2281,6 +2372,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &1789828431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789828427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &1967988037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2292,6 +2396,7 @@ GameObject:
   - component: {fileID: 1967988039}
   - component: {fileID: 1967988038}
   - component: {fileID: 1967988040}
+  - component: {fileID: 1967988041}
   m_Layer: 0
   m_Name: Tlie (1)
   m_TagString: Untagged
@@ -2411,6 +2516,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &1967988041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967988037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2011311967
 GameObject:
   m_ObjectHideFlags: 0
@@ -2422,6 +2540,7 @@ GameObject:
   - component: {fileID: 2011311969}
   - component: {fileID: 2011311968}
   - component: {fileID: 2011311970}
+  - component: {fileID: 2011311971}
   m_Layer: 0
   m_Name: Tlie
   m_TagString: Untagged
@@ -2541,6 +2660,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &2011311971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2011311967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2026068143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2552,6 +2684,7 @@ GameObject:
   - component: {fileID: 2026068145}
   - component: {fileID: 2026068144}
   - component: {fileID: 2026068146}
+  - component: {fileID: 2026068147}
   m_Layer: 0
   m_Name: Tlie (6)
   m_TagString: Untagged
@@ -2671,6 +2804,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.83, y: 0.87}
   m_EdgeRadius: 0
+--- !u!114 &2026068147
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2026068143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39e0ddc1a675ca447a8f2444811c8efa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &2066690641
 GameObject:
   m_ObjectHideFlags: 0
@@ -2777,6 +2923,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   emptySpace: {fileID: 431800848}
+  tiles:
+  - {fileID: 2011311971}
+  - {fileID: 1967988041}
+  - {fileID: 1573757135}
+  - {fileID: 1059684773}
+  - {fileID: 572789046}
+  - {fileID: 1721353789}
+  - {fileID: 2026068147}
+  - {fileID: 233970775}
+  - {fileID: 325771886}
+  - {fileID: 1789828431}
+  - {fileID: 17729879}
+  - {fileID: 576166466}
+  - {fileID: 1568970559}
+  - {fileID: 1286926314}
+  - {fileID: 43265502}
+  - {fileID: 0}
 --- !u!1 &2123122849
 GameObject:
   m_ObjectHideFlags: 0
@@ -2868,4 +3031,3 @@ SceneRoots:
   - {fileID: 43265500}
   - {fileID: 431800848}
   - {fileID: 675226572}
-  - {fileID: 506555976}
