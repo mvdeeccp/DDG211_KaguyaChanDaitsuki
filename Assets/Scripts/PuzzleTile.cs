@@ -9,6 +9,9 @@ public class PuzzleTile : MonoBehaviour
     public Vector3 targetPosition;
     private Vector3 correctPosition;
     private SpriteRenderer _sprite;
+    public int number;
+    public bool inRightPlace;
+
     private void Awake()
     {
         targetPosition = transform.position;
@@ -17,14 +20,16 @@ public class PuzzleTile : MonoBehaviour
     }
     private void Update()
     {
-        transform.position = Vector3.Lerp(transform.position, targetPosition, 0.2f);
+        transform.position = Vector3.Lerp(transform.position, targetPosition, 0.5f);
         if(targetPosition == correctPosition)
         {
-            _sprite.color = Color.green;
+            _sprite.color = Color.white;
+            inRightPlace = true;
         }
         else
         {
-            _sprite.color = Color.red;
+            _sprite.color = Color.gray;
+            inRightPlace = false;
         }
     }
 }

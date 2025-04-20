@@ -1,0 +1,466 @@
+fileFormatVersion: 2
+guid: 24daa1ff8d15e3b48865b8128bb2bcb4
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 320
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AJTuangProjectSW_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 833.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffaa30477dc0b924aa6f6172f02cd3ec
+      internalID: 359956713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_1
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 833.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b131bd743644ee41ae14298b08b1b02
+      internalID: -55569785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_2
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 833.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df80d5de584fca14db24ed9936fb399e
+      internalID: -65728322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_3
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 833.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f687aee1366ef44b1c28c3a29a668c
+      internalID: -1196475755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 556.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553a4bbc356b91144b4ee9f4450e9fee
+      internalID: 1308976130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_5
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 556.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85fe31935e6ec694bb0567e2d0bdc114
+      internalID: 370185175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_6
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 556.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c988ac197cfe3043ae0230bbd31a87c
+      internalID: 1350998357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_7
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 556.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cca6e415d5ce0149a6526e9749c5047
+      internalID: 1576886400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 279.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dee000591a50a5448fe5a3eab2cdf93
+      internalID: -341303639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_9
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 279.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0192c50f2edcd458a612bde0cedcbd
+      internalID: 1355010897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_10
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 279.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845c4bdefecd2c5458e3432cdb05f4cb
+      internalID: -1505089093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_11
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 279.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa267b542d5cfdc46abb9d42738ca0cd
+      internalID: -844317655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d6f7bd2969ac3e44847b84266859c92
+      internalID: 141828963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_13
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 2.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4cb18e25c15ff8b4aa9e90e7ca0f3b27
+      internalID: -274077098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_14
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 2.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a3531ed2f008f344aeccfb34e1662ee
+      internalID: -1363402158
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AJTuangProjectSW_15
+      rect:
+        serializedVersion: 2
+        x: 831
+        y: 2.25
+        width: 277.5
+        height: 277.75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8083682b347b3524ea1e65d2dfc639a0
+      internalID: 919426416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      AJTuangProjectSW_0: 359956713
+      AJTuangProjectSW_1: -55569785
+      AJTuangProjectSW_10: -1505089093
+      AJTuangProjectSW_11: -844317655
+      AJTuangProjectSW_12: 141828963
+      AJTuangProjectSW_13: -274077098
+      AJTuangProjectSW_14: -1363402158
+      AJTuangProjectSW_15: 919426416
+      AJTuangProjectSW_2: -65728322
+      AJTuangProjectSW_3: -1196475755
+      AJTuangProjectSW_4: 1308976130
+      AJTuangProjectSW_5: 370185175
+      AJTuangProjectSW_6: 1350998357
+      AJTuangProjectSW_7: 1576886400
+      AJTuangProjectSW_8: -341303639
+      AJTuangProjectSW_9: 1355010897
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
