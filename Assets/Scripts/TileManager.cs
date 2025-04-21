@@ -19,7 +19,7 @@ public class TileManager : MonoBehaviour
     private void Start()
     {
         _camera = Camera.main;
-        Shuffle();
+        //Shuffle();
     }
 
     private void Update()
