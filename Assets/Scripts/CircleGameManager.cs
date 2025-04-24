@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CircleGameManager : MonoBehaviour
@@ -25,8 +26,11 @@ public class CircleGameManager : MonoBehaviour
     private int roundCount = 0;
     private int maxRounds = 20;
 
+    public GameObject finishPanel;
+
     void Start()
     {
+        finishPanel.SetActive(false);
         foreach (var circle in circles)
         {
             Button btn = circle.button;
@@ -71,6 +75,7 @@ public class CircleGameManager : MonoBehaviour
 
         Debug.Log("Finish!");
         finishText.gameObject.SetActive(true);
+        finishPanel.SetActive(true);
     }
 
 
@@ -102,5 +107,15 @@ public class CircleGameManager : MonoBehaviour
         {
             circle.border.SetActive(false);
         }
+
+    }
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene("Game4");
+    }
+
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

@@ -19,7 +19,8 @@ public class TileManager : MonoBehaviour
     private void Start()
     {
         _camera = Camera.main;
-        //Shuffle();
+        endPanel.SetActive(false);
+        Shuffle();
     }
 
     private void Update()
@@ -67,7 +68,7 @@ public class TileManager : MonoBehaviour
 
     public void Next()
     {
-        SceneManager.LoadScene("Game4");
+        SceneManager.LoadScene("Game5");
     }
 
     public void Shuffle()

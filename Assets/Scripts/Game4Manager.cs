@@ -9,7 +9,8 @@ public class Game4Manager : MonoBehaviour
     public GameObject modelPanel;
     public GameObject gameplayPanel;
     public List<GameObject> modelBeads; 
-    public int hiddenBeadCount = 6; 
+    public int hiddenBeadCount = 6;
+    public GameObject resultPanel;
 
     private HashSet<int> hiddenIndexes = new HashSet<int>(); 
 

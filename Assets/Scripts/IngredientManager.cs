@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 
 public class IngredientManager : MonoBehaviour
@@ -23,6 +24,10 @@ public class IngredientManager : MonoBehaviour
     public List<GameObject> plantPots;
     private int correctCount = 0; 
     private int currentPotIndex = 0;
+
+    public int maxRounds = 15;
+    private int currentRound = 0;
+    public GameObject endPanel;
 
     void Start()
     {
@@ -50,6 +55,15 @@ public class IngredientManager : MonoBehaviour
 
     void GenerateRandomRecipe()
     {
+        if (currentRound >= maxRounds)
+        {
+            Debug.Log("Finshed!");
+            endPanel.SetActive(true);
+            return;
+        }
+
+        currentRound++;
+
         // Random 2 ingredient
         int index1 = Random.Range(0, ingredients.Count);
         int index2;
@@ -62,7 +76,9 @@ public class IngredientManager : MonoBehaviour
         target2 = ingredients[index2];
 
         recipeText.text = $"{target1}+{target2}";
+        //ResetIngredientColors();
         selectedIngredients.Clear();
+        //StartCoroutine(RecipeTimer());
 
         foreach (var sprite in ingredientSprites)
         {
@@ -142,5 +158,15 @@ public class IngredientManager : MonoBehaviour
         {
             plantPots[currentPotIndex].SetActive(true);
         }
+    }
+
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    public void GoToNextLevel()
+    {
+        SceneManager.LoadScene("Game3");
     }
 }
