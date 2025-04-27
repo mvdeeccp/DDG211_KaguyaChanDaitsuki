@@ -16,6 +16,11 @@ public class TileManager : MonoBehaviour
     [SerializeField] private GameObject endPanel;
     [SerializeField] private TextMeshProUGUI endPanelTimeText;
 
+    [SerializeField] private GameObject PrototypePanel;
+    [SerializeField] private GameObject image1;
+    [SerializeField] private GameObject image2;
+    private int clickCount = 0;
+
     private void Start()
     {
         _camera = Camera.main;
@@ -61,7 +66,7 @@ public class TileManager : MonoBehaviour
                 endPanel.SetActive(true);
                 var a = GetComponent<TimerScript>();
                 a.StopTimer();
-                endPanelTimeText.text = (a.minutes < 10?"0":"") + a.minutes + ":" + (a.seconds < 10?"0":"") + a.seconds;
+                endPanelTimeText.text = (a.minutes < 10 ? "0" : "") + a.minutes + ":" + (a.seconds < 10 ? "0" : "") + a.seconds;
             }
         }
     }
@@ -104,11 +109,11 @@ public class TileManager : MonoBehaviour
             invertion = GetInversion();
             Debug.Log("Puzzle Shuffled");
 
-        } while (invertion%2 !=0);
+        } while (invertion % 2 != 0);
     }
     public int findIndex(PuzzleTile ts)
     {
-        for(int i = 0; i < tiles.Length ; i++)
+        for (int i = 0; i < tiles.Length; i++)
         {
             if (tiles[i] != null)
             {
@@ -124,21 +129,46 @@ public class TileManager : MonoBehaviour
     int GetInversion()
     {
         int inversionSum = 0;
-        for(int i = 0;i < tiles.Length ; i++)
+        for (int i = 0; i < tiles.Length; i++)
         {
             int thisTileInvertion = 0;
-            for(int j = i; j< tiles.Length ; j++)
+            for (int j = i; j < tiles.Length; j++)
             {
                 if (tiles[j] != null)
                 {
                     if (tiles[i].number > tiles[j].number)
                     {
-                        thisTileInvertion ++;
+                        thisTileInvertion++;
                     }
                 }
             }
             inversionSum += thisTileInvertion;
         }
         return inversionSum;
+    }
+    public void OnButtonClick()
+    {
+        clickCount++;
+
+        if (clickCount == 1)
+        {
+            PrototypePanel.SetActive(true);
+        }
+        else if (clickCount == 2)
+        {
+            image1.SetActive(true);
+        }
+        else if (clickCount == 3)
+        {
+            image1.SetActive(false);
+            image2.SetActive(true);
+        }
+        else if (clickCount == 4)
+        {
+            PrototypePanel.SetActive(false);
+            image1.SetActive(false);
+            image2.SetActive(false);
+            clickCount = 0;
+        }
     }
 }
