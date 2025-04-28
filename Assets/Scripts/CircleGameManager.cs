@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public class CircleGameManager : MonoBehaviour
 {
     [System.Serializable]
@@ -15,18 +16,30 @@ public class CircleGameManager : MonoBehaviour
     }
 
     public List<Circle> circles;
-    public TextMeshProUGUI finishText;
+    //public TextMeshProUGUI finishText;
 
     private int currentIndex = -1;
-    private float responseTime = 1f;
+    private float responseTime = 1.3f;
     private float minResponseTime = 0.5f;
     private float decreaseStep = 0.1f;
     private bool isWaitingForClick = false;
-
+    
     private int roundCount = 0;
     private int maxRounds = 20;
 
     public GameObject finishPanel;
+
+    public GameObject Image1;
+    public GameObject Image2;
+    public GameObject Image3;
+    public GameObject Image4;
+    public GameObject Image5;
+
+    private int correctClickCount = 0;
+
+    public TextMeshProUGUI resultText;
+
+
 
     void Start()
     {
@@ -38,7 +51,8 @@ public class CircleGameManager : MonoBehaviour
             circle.border.SetActive(false);
         }
 
-        finishText.gameObject.SetActive(false);
+        //finishText.gameObject.SetActive(false);
+        resultText.text = "";
         StartCoroutine(RandomHighlightRoutine());
     }
 
@@ -46,7 +60,7 @@ public class CircleGameManager : MonoBehaviour
     {
         while (roundCount < maxRounds)
         {
-            float randomDelay = Random.Range(1f, 2.1f);
+            float randomDelay = Random.Range(1.5f, 2.1f);
             yield return new WaitForSeconds(randomDelay);
 
             currentIndex = Random.Range(0, circles.Count);
@@ -65,6 +79,13 @@ public class CircleGameManager : MonoBehaviour
             if (isWaitingForClick)
             {
                 Debug.Log("Miss!");
+                resultText.text = "Miss!";
+                resultText.color = Color.red;
+                /*Image borderImage = circles[currentIndex].border.GetComponent<Image>();
+                borderImage.color = Color.red;*/
+
+                yield return new WaitForSeconds(0.5f);
+                resultText.text = "";
                 ResetHighlight();
                 responseTime = Mathf.Max(minResponseTime, responseTime - decreaseStep);
                 isWaitingForClick = false;
@@ -74,20 +95,31 @@ public class CircleGameManager : MonoBehaviour
         }
 
         Debug.Log("Finish!");
-        finishText.gameObject.SetActive(true);
+        //finishText.gameObject.SetActive(true);
         finishPanel.SetActive(true);
     }
 
 
     void OnCircleClick(Button clickedButton)
     {
+
         if (!isWaitingForClick) return;
 
         if (circles[currentIndex].button == clickedButton)
         {
             Debug.Log("Correct!");
+            resultText.text = "Correct!";
+            resultText.color = Color.green;
+            StartCoroutine(ClearResultTextAfterDelay(0.5f));
+            /*Image borderImage = circles[currentIndex].border.GetComponent<Image>();
+            borderImage.color = Color.green;
+
+            StartCoroutine(ResetHighlightAfterDelay(0.1f));*/
             ResetHighlight();
             isWaitingForClick = false;
+            correctClickCount++;
+
+            CheckPanelSwitch();
         }
         else
         {
@@ -118,4 +150,39 @@ public class CircleGameManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+
+    void CheckPanelSwitch()
+    {
+        if (correctClickCount == 5)
+        {
+            Image1.SetActive(false);
+            Image2.SetActive(true);
+        }
+        else if (correctClickCount == 10)
+        {
+            Image2.SetActive(false);
+            Image3.SetActive(true);
+        }
+        else if (correctClickCount == 14)
+        {
+            Image3.SetActive(false);
+            Image4.SetActive(true);
+        }
+        else if (correctClickCount == 19)
+        {
+            Image4.SetActive(false);
+            Image5.SetActive(true);
+        }
+    }
+    IEnumerator ClearResultTextAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        resultText.text = "";
+    }
+    /* IEnumerator ResetHighlightAfterDelay(float delay)
+     {
+         yield return new WaitForSeconds(delay);
+         ResetHighlight();
+     }*/
+
 }

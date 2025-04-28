@@ -16,8 +16,9 @@ public class IngredientManager : MonoBehaviour
     private string target1, target2;
     private List<string> selectedIngredients = new List<string>();
 
-    public float timeLimit = 5f;
-    private float timer;
+    public float timeLimit = 10f; //max time
+    private float timer; //timeRemaining
+   
     private bool isTiming = false;
     public TextMeshProUGUI timerText;
 
@@ -29,8 +30,19 @@ public class IngredientManager : MonoBehaviour
     private int currentRound = 0;
     public GameObject endPanel;
 
+    [SerializeField] private Image TimerImage; //timerLinaerImage
+
+    private int targetNumber;   
+    private int currentNumber = 0; 
+    public TextMeshProUGUI numberText;
+
+    public GameObject clickArea;
+
+
     void Start()
     {
+        timeLimit = 10f;
+        timer = timeLimit;
         GenerateRandomRecipe();
         UpdatePotDisplay();
         checkButton.onClick.AddListener(CheckAnswer);
@@ -38,15 +50,40 @@ public class IngredientManager : MonoBehaviour
 
     void Update()
     {
+        if (IsMouseInClickArea())
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                currentNumber = (currentNumber + 1) % 4;
+                UpdateNumberText();
+            }
+
+            if (Input.GetMouseButtonDown(1))
+            {
+                currentNumber = (currentNumber - 1 + 4) % 4;
+                UpdateNumberText();
+            }
+        }
+
+        
+
         if (isTiming)
         {
-            timer -= Time.deltaTime;
-            timerText.text = timer.ToString("F1");
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
+                //timer -= Time.deltaTime;
+                timerText.text = timer.ToString("F1");
+                TimerImage.fillAmount = timer / timeLimit;
+            }
+            
 
             if (timer <= 0f)
             {
                 timerText.text = "Time: 0.0";
                 isTiming = false;
+                
+
                 Debug.Log("Time Out");
                 GenerateRandomRecipe(); 
             }
@@ -74,8 +111,13 @@ public class IngredientManager : MonoBehaviour
 
         target1 = ingredients[index1];
         target2 = ingredients[index2];
+        targetNumber = Random.Range(0, 4);
 
-        recipeText.text = $"{target1}+{target2}";
+        recipeText.text = $"{target1}+{target2} + {targetNumber}";
+
+        currentNumber = 0;
+        UpdateNumberText();
+
         //ResetIngredientColors();
         selectedIngredients.Clear();
         //StartCoroutine(RecipeTimer());
@@ -103,6 +145,11 @@ public class IngredientManager : MonoBehaviour
         }
     }
 
+    void UpdateNumberText()
+    {
+        numberText.text = $"{currentNumber}";
+    }
+
     void CheckAnswer()
     {
         if (!isTiming)
@@ -117,26 +164,25 @@ public class IngredientManager : MonoBehaviour
             return;
         }
 
-        // Order just have 2 ingredient
-        if (selectedIngredients[0] == target1 && selectedIngredients[1] == target2)
+        bool ingredientsCorrect = selectedIngredients[0] == target1 && selectedIngredients[1] == target2;
+        bool numberCorrect = currentNumber == targetNumber;
+
+
+        if (ingredientsCorrect && numberCorrect)
         {
-            Debug.Log("Correct!");
+            Debug.Log("Correct");
+
             correctCount++;
 
             if (correctCount % 3 == 0)
             {
                 currentPotIndex++;
-
                 if (currentPotIndex >= plantPots.Count)
-                {
                     currentPotIndex = plantPots.Count - 1;
-                    Debug.Log("Last!");
-                }
-
-                UpdatePotDisplay(); // Change
+                UpdatePotDisplay();
             }
         }
-        
+
         else
         {
             Debug.Log("Wrong Try again!");
@@ -144,6 +190,18 @@ public class IngredientManager : MonoBehaviour
 
         isTiming = false;
         GenerateRandomRecipe();
+    }
+
+    bool IsMouseInClickArea()
+    {
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
+
+        if (hit.collider != null && hit.collider.gameObject == clickArea.gameObject)
+        {
+            return true;
+        }
+        return false;
     }
 
     void UpdatePotDisplay()
