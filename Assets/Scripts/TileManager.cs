@@ -76,6 +76,11 @@ public class TileManager : MonoBehaviour
         SceneManager.LoadScene("Game5");
     }
 
+    public void MainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void Shuffle()
     {
         if (emptySpaceIndex != 15)

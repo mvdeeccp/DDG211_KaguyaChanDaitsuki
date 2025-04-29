@@ -16,7 +16,7 @@ public class IngredientManager : MonoBehaviour
     private string target1, target2;
     private List<string> selectedIngredients = new List<string>();
 
-    public float timeLimit = 10f; //max time
+    public float timeLimit = 7f; //max time
     private float timer; //timeRemaining
    
     private bool isTiming = false;
