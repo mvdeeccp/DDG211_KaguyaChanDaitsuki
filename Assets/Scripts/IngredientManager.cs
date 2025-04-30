@@ -26,6 +26,9 @@ public class IngredientManager : MonoBehaviour
     private int correctCount = 0; 
     private int currentPotIndex = 0;
 
+    private const int correctScore = 6;
+    private const int wrongScore = -2;
+
     public int maxRounds = 15;
     private int currentRound = 0;
     public GameObject endPanel;
@@ -38,14 +41,29 @@ public class IngredientManager : MonoBehaviour
 
     public GameObject clickArea;
 
+    public TextMeshProUGUI scoreSummaryText;
+
+    public GameObject settingsPanel;
+    public GameObject tutorialPanel;
+
+    public List<GameObject> tutorialPages;
+    private int currentTutorialPage = 0;
+
 
     void Start()
     {
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(true);
+        }
         timeLimit = 10f;
         timer = timeLimit;
         GenerateRandomRecipe();
         UpdatePotDisplay();
         checkButton.onClick.AddListener(CheckAnswer);
+        if (settingsPanel != null) settingsPanel.SetActive(false);
+        //if (tutorialPanel != null) tutorialPanel.SetActive(false);
+        ShowTutorialPage(0);
     }
 
     void Update()
@@ -96,7 +114,14 @@ public class IngredientManager : MonoBehaviour
         {
             Debug.Log("Finshed!");
             endPanel.SetActive(true);
+
+            if (ScoreManager.Instance != null && scoreSummaryText != null)
+            {
+                scoreSummaryText.text = ScoreManager.Instance.currentScore.ToString();
+            }
+
             return;
+        
         }
 
         currentRound++;
@@ -174,6 +199,11 @@ public class IngredientManager : MonoBehaviour
 
             correctCount++;
 
+            if (ScoreManager.Instance != null)
+            {
+                ScoreManager.Instance.AddScore(correctScore);
+            }
+
             if (correctCount % 3 == 0)
             {
                 currentPotIndex++;
@@ -186,6 +216,11 @@ public class IngredientManager : MonoBehaviour
         else
         {
             Debug.Log("Wrong Try again!");
+        }
+
+        if (ScoreManager.Instance != null)
+        {
+            ScoreManager.Instance.AddScore(wrongScore);
         }
 
         isTiming = false;
@@ -226,5 +261,41 @@ public class IngredientManager : MonoBehaviour
     public void GoToNextLevel()
     {
         SceneManager.LoadScene("Game3");
+    }
+
+    public void ToggleSettingsPanel()
+    {
+        if (settingsPanel != null)
+        {
+            settingsPanel.SetActive(!settingsPanel.activeSelf);
+        }
+    }
+
+    
+    public void ToggleTutorialPanel()
+    {
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(!tutorialPanel.activeSelf);
+        }
+    }
+
+    
+    public void NextTutorialPage()
+    {
+        if (currentTutorialPage < tutorialPages.Count - 1)
+        {
+            currentTutorialPage++;
+            ShowTutorialPage(currentTutorialPage);
+        }
+    }
+
+    
+    private void ShowTutorialPage(int index)
+    {
+        for (int i = 0; i < tutorialPages.Count; i++)
+        {
+            tutorialPages[i].SetActive(i == index);
+        }
     }
 }

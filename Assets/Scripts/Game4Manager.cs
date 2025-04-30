@@ -21,8 +21,21 @@ public class Game4Manager : MonoBehaviour
     private float[] memoryTimes = new float[] { 3f, 5f, 7f };
     private HashSet<int> hiddenIndexes = new HashSet<int>();
 
+    public GameObject settingsPanel;
+    public GameObject tutorialPanel;
+    public TextMeshProUGUI finalScoreText;
+
+    public List<GameObject> tutorialPages;
+    private int currentTutorialPage = 0;
+
+
+
     void Start()
     {
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(true);
+        }
         resultPanel.SetActive(false);
         hintPanel.SetActive(false);
         StartCoroutine(ShowModelThenPlay());
@@ -95,6 +108,15 @@ public class Game4Manager : MonoBehaviour
             }
         }
 
+        if (isCorrect)
+        {
+            int[] scorePerRound = new int[] { 20, 30, 40 };
+            if (currentRound < scorePerRound.Length)
+            {
+                ScoreManager.Instance.AddScore(scorePerRound[currentRound]);
+            }
+        }
+
         currentRound++; 
 
         if (currentRound >= totalRounds)
@@ -113,11 +135,17 @@ public class Game4Manager : MonoBehaviour
     {
         gameplayPanel.SetActive(false);
         resultPanel.SetActive(true);
+
+        if (finalScoreText != null)
+        {
+            finalScoreText.text = $"{ScoreManager.Instance.currentScore}";
+        }
+
     }
 
     public void GoToNextLevel()
     {
-        SceneManager.LoadScene("NextLevelSceneName");
+        SceneManager.LoadScene("Game5");
     }
 
     public void GoToMainMenu()
@@ -140,4 +168,40 @@ public class Game4Manager : MonoBehaviour
             hintPanel.SetActive(true);  
         }
     }
+
+    public void ToggleSettings()
+    {
+        settingsPanel.SetActive(!settingsPanel.activeSelf);
+    }
+
+    public void ToggleTutorialPanel()
+    {
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(!tutorialPanel.activeSelf);
+            if (tutorialPanel.activeSelf)
+            {
+                currentTutorialPage = 0;
+                ShowTutorialPage(currentTutorialPage);
+            }
+        }
+    }
+
+    public void NextTutorialPage()
+    {
+        if (currentTutorialPage < tutorialPages.Count - 1)
+        {
+            currentTutorialPage++;
+            ShowTutorialPage(currentTutorialPage);
+        }
+    }
+
+    private void ShowTutorialPage(int index)
+    {
+        for (int i = 0; i < tutorialPages.Count; i++)
+        {
+            tutorialPages[i].SetActive(i == index);
+        }
+    }
+
 }

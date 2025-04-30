@@ -21,8 +21,23 @@ public class TileManager : MonoBehaviour
     [SerializeField] private GameObject image2;
     private int clickCount = 0;
 
+    [SerializeField] private TextMeshProUGUI endPanelScoreText;
+
+    
+    public GameObject settingsPanel;
+    public GameObject tutorialPanel;
+
+    public List<GameObject> tutorialPages = new List<GameObject>();
+    private int currentTutorialPage = 0;
+
+
+
     private void Start()
     {
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(true);
+        }
         _camera = Camera.main;
         endPanel.SetActive(false);
         Shuffle();
@@ -64,16 +79,24 @@ public class TileManager : MonoBehaviour
             {
                 _isFinished = true;
                 endPanel.SetActive(true);
-                var a = GetComponent<TimerScript>();
-                a.StopTimer();
-                endPanelTimeText.text = (a.minutes < 10 ? "0" : "") + a.minutes + ":" + (a.seconds < 10 ? "0" : "") + a.seconds;
+                var timer = GetComponent<TimerScript>();
+                timer.StopTimer();
+
+                float totalSeconds = timer.minutes * 60f + timer.seconds;
+                int finalScore = CalculateScoreFromTime(totalSeconds);
+
+                endPanelTimeText.text = (timer.minutes < 10 ? "0" : "") + timer.minutes + ":" + (timer.seconds < 10 ? "0" : "") + timer.seconds;
+                endPanelScoreText.text = $"Score: {finalScore}";
+
+                ScoreManager.Instance.AddScore(finalScore);
             }
+
         }
     }
 
     public void Next()
     {
-        SceneManager.LoadScene("Game5");
+        SceneManager.LoadScene("Result1");
     }
 
     public void MainMenu()
@@ -176,4 +199,56 @@ public class TileManager : MonoBehaviour
             clickCount = 0;
         }
     }
+
+    private int CalculateScoreFromTime(float timeInSeconds)
+    {
+        if (timeInSeconds <= 90f) return 100;
+        if (timeInSeconds >= 360f) return 10;
+
+        float t = (timeInSeconds - 90f) / (360f - 90f);
+        return Mathf.RoundToInt(Mathf.Lerp(100f, 10f, t));
+    }
+
+    public void ToggleSettingsPanel()
+    {
+        settingsPanel.SetActive(!settingsPanel.activeSelf);
+    }
+
+    // Tutorial
+    public void ToggleTutorialPanel()
+    {
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(!tutorialPanel.activeSelf);
+            currentTutorialPage = 0;
+            ShowTutorialPage(currentTutorialPage);
+        }
+    }
+
+    public void NextTutorialPage()
+    {
+        if (currentTutorialPage < tutorialPages.Count - 1)
+        {
+            currentTutorialPage++;
+            ShowTutorialPage(currentTutorialPage);
+        }
+    }
+
+    public void PreviousTutorialPage()
+    {
+        if (currentTutorialPage > 0)
+        {
+            currentTutorialPage--;
+            ShowTutorialPage(currentTutorialPage);
+        }
+    }
+
+    private void ShowTutorialPage(int index)
+    {
+        for (int i = 0; i < tutorialPages.Count; i++)
+        {
+            tutorialPages[i].SetActive(i == index);
+        }
+    }
+
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 
@@ -39,11 +40,26 @@ public class CircleGameManager : MonoBehaviour
 
     public TextMeshProUGUI resultText;
 
+    public int score = 0;
+
+    public GameObject settingPanel;
+    public GameObject tutorialPanel;
+    public List<GameObject> tutorialPages;
+    private int currentTutorialIndex = 0;
+
+    public TextMeshProUGUI finalScoreText;
+
 
 
     void Start()
     {
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(true);
+        }
         finishPanel.SetActive(false);
+        settingPanel.SetActive(false);
+        //tutorialPanel.SetActive(false);
         foreach (var circle in circles)
         {
             Button btn = circle.button;
@@ -78,6 +94,9 @@ public class CircleGameManager : MonoBehaviour
 
             if (isWaitingForClick)
             {
+                ScoreManager.Instance.currentScore = Mathf.Max(0, ScoreManager.Instance.currentScore - 2);
+
+                //UpdateScoreUI();
                 Debug.Log("Miss!");
                 resultText.text = "Miss!";
                 resultText.color = Color.red;
@@ -97,6 +116,8 @@ public class CircleGameManager : MonoBehaviour
         Debug.Log("Finish!");
         //finishText.gameObject.SetActive(true);
         finishPanel.SetActive(true);
+        finalScoreText.text = $"{ScoreManager.Instance.currentScore}";
+
     }
 
 
@@ -107,6 +128,9 @@ public class CircleGameManager : MonoBehaviour
 
         if (circles[currentIndex].button == clickedButton)
         {
+            ScoreManager.Instance.currentScore += 7;
+
+
             Debug.Log("Correct!");
             resultText.text = "Correct!";
             resultText.color = Color.green;
@@ -184,5 +208,42 @@ public class CircleGameManager : MonoBehaviour
          yield return new WaitForSeconds(delay);
          ResetHighlight();
      }*/
+
+    public void ToggleSettingsPanel()
+    {
+        if (settingPanel != null)
+        {
+            settingPanel.SetActive(!settingPanel.activeSelf);
+        }
+    }
+
+
+    public void ToggleTutorialPanel()
+    {
+        if (tutorialPanel != null)
+        {
+            tutorialPanel.SetActive(!tutorialPanel.activeSelf);
+        }
+    }
+
+
+    public void NextTutorialPage()
+    {
+        if (currentTutorialIndex < tutorialPages.Count - 1)
+        {
+            currentTutorialIndex++;
+            ShowTutorialPage(currentTutorialIndex);
+        }
+    }
+
+
+    private void ShowTutorialPage(int index)
+    {
+        for (int i = 0; i < tutorialPages.Count; i++)
+        {
+            tutorialPages[i].SetActive(i == index);
+        }
+    }
+
 
 }
